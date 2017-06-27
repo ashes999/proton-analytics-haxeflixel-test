@@ -3,18 +3,15 @@ package;
 import flixel.FlxGame;
 import openfl.display.Sprite;
 import openfl.display.Stage;
-import protonanalytics.AnalyticsClient;
 import openfl.events.Event;
 
 class Main extends Sprite
 {
-	private var client = new AnalyticsClient("PTIY6d4512lvA//5Sdh0EJmLRbOf2h2L124e9fqlNaE=");
-
 	public function new()
 	{
 		super();
 
-		client.startSession();
+		PaClient.startSession();
 
 		// Called on desktop targets but not HTML5, sadly.
 		stage.addEventListener(Event.DEACTIVATE, endSession); 
@@ -31,6 +28,6 @@ class Main extends Sprite
 	private function endSession(data:Dynamic):Void
 	{
 		trace("DEACTIVATE: " + data);
-		client.endSession();
+		PaClient.endSession();
 	}
 }

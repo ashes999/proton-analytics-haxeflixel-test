@@ -14,6 +14,6 @@ class PlayState extends FlxState
 	override public function onFocusLost():Void
 	{
 		trace("FOCUS!!!");
-		new AnalyticsClient("PTIY6d4512lvA//5Sdh0EJmLRbOf2h2L124e9fqlNaE=").endSession();
+		PaClient.endSession();
 	}
 }
